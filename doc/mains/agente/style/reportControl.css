@@ -1,0 +1,377 @@
+/*Universal*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto';
+}
+
+html{
+    font-size: 62.5%;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #ffa8515b, #ffe3595d);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #ffa8512a, #ffe3591f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+:root{
+    --primary-color: #8d4925;
+    --secondary-color: #c57d56;
+    --tertiary-color:#ffb48a;
+    --quaternary-color:#f0ecec;
+    --quintinary-color:#ffffff;
+}
+
+
+/*Loader de pagina*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px; /*Estos dos apartados "weidth" y "height" es el tamaño para la figura, esto aplica en todas las veces que aparecen, es largo y alto respectivamanete*/
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Hasta aqui termina el codigo para solamente la animacion del circulo girando */
+
+.loader{
+    /* Este apartado indica el fondo de la animacion mencionada antes y como se comportara*/
+    background: #000; /* Color del fondo de la animacion*/
+    width: 100%; /* Esta linea y la siguiente indican que el fondo cubra todo el largo y alto de la pagina*/
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Esta linea y la siguiente realizan el centrado del circulo en la pagina*/
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000; /* Se inidica que la pantalla de carga debe de estar por encima de todo lo que tenga la pagina, el numero debe ser muy alto para que esto se cumpla*/
+    
+    /*En esta pagina web se encuentran distintos diseños (figuras) para la animacion de desaparicion de carga: https://bennettfeely.com/clippy/ */
+
+    clip-path: circle(150% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde inicia)*/
+    transition: clip-path 0.8s ease-in-out; /* Es la transicion y el tiempo que le tomara realizar dicha transicion para quitarse*/
+}
+
+.loader2{ /* Se crea este segundo elemento para la desaparicion de la animacion de carga */
+    clip-path: circle(0% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde termina)*/
+    /* Para este apartado, se necesita de la ayuda de JavaScript para que se cuumpla esto correctamente*/
+}
+
+
+/*Cuerpo general*/
+header{
+    background: #f46b45;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+header p{
+    text-shadow:1px 0.5px 0.1px black;
+}
+header a{
+    text-shadow:1px 0.5px 0.1px black;
+}
+.nav-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.div-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vh 2vw 0vh 3vw;
+}
+.div-conteiner a:hover{
+    color: rgba(240, 255, 254, 0.836);
+    text-decoration: underline;
+}
+.nav-conteiner::before{
+    display: block;
+    background: #ffffff;
+    height: 1px;
+    width: 100%;
+    top: 0;
+    content: "";
+    margin-bottom: 0.5rem;
+    box-shadow: 0.5rem 0.5rem 0.9rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+
+.div-companyName{
+    background-image: url(./img/boxha_logo.png);
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 10vh;
+    width: 100%;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--quintinary-color);
+}
+.nav-conteiner .icons p{
+    display: inline-block;
+    margin: 1vh;
+    font-size: 1.6rem;
+}
+
+.nav-conteiner .icons i{
+    font-size: 1.3rem;
+}
+
+.div-slogan{
+    color: var(--quintinary-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration:none;
+    font-style: italic;
+}
+
+.div-userName{
+    color: var(--quintinary-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration:none;
+}
+
+.div-exit{
+    display:block;
+    color: var(--quintinary-color);
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration:none;
+    padding-top: 1rem;
+}
+
+.nav-conteiner a{
+    color: var(--quintinary-color);
+    text-decoration: none;
+    padding: 1vh 1vw;
+}
+
+.nav-conteiner a::before{
+    display: block;
+    background: var(--quintinary-color);
+    height: 5px;
+    width: 0%;
+    top: 0;
+    content: "";
+    margin-bottom: 0.5rem;
+    transition: width 1s;
+}
+
+.nav-conteiner a:hover{
+    font-size: 1.2rem;
+    background-color: rgba(255, 128, 24, 0.36);
+    border-radius: 10px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #f0ecec59;
+}
+
+.nav-conteiner a:hover::before{
+    width: 100%;   
+}
+
+
+
+footer{
+    background: #f46b45;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.div-conteiner-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+    padding: 1rem;
+}
+
+.fa-square{
+    color: var(--quintinary-color);
+    text-shadow:1px 0.5px 0.1px rgba(0, 0, 0, 0.562);
+}
+
+.div-conteiner-footer h3{
+    font-size: 1vw;
+    color: var(--quaternary-color);
+    font-style: italic;
+    font-weight: 400;
+    text-shadow:1px 0.5px 0.1px black;
+}
+
+.div-conteiner-footer a{
+    padding: 0.5rem;
+}
+.div-conteiner-footer::before{
+    display: block;
+    background-color: #ffffff;
+    content:"";
+    width: 100%;
+    height: 0.3vh;
+    border-radius: 1vmax;
+    box-shadow: 0.5rem 0.5rem 0.9rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+
+.div-conteiner-footer span:hover{
+    padding: 0.25rem;
+    background-color: rgba(255, 128, 24, 0.36);
+    border-radius: 10px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #f0ecec59;
+}
+.logo{
+    width: 15rem;
+    height: auto;
+}
+
+.storage-grid-conteiner{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(1,auto);
+    grid-template-areas: 
+    "reportes"
+    ;
+    margin: 4vh 0;
+}
+
+.titulos{
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+    justify-content: center;
+    grid-area: titulos;
+    margin: 1vh 1vw;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    text-shadow:1px 2px 0.3px rgba(146, 146, 146, 0.781);
+}
+.titulos p{
+    padding: 1vh 1vw;
+    border:solid rgba(0, 0, 0, 0.658);
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.9rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+.titulos::after{
+    display: block;
+    background: #757F9A;
+    height: 3px;
+    width: 100%;
+    top: 0;
+    content: "";
+    box-shadow: 0.2rem -0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+    border-radius: 1rem;
+    border: solid rgba(0, 0, 0, 0.377) 0.5px;
+}
+.titulos::before{
+    display: block;
+    background: #757F9A;  /* fallback for old browsers */
+    height: 3px;
+    width: 100%;
+    top: 0;
+    content: "";
+    box-shadow: 0.2rem 0.3rem 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+    border-radius: 1rem;
+    border: solid rgba(0, 0, 0, 0.377) 0.5px;
+}
+.reportes{
+    display: flex;
+    align-items: center;
+    background: #8e9eab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    justify-content: center;
+    grid-area: reportes;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+    margin: 1vh 1vw;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: solid rgba(15, 13, 13, 0.226);
+    text-shadow:1px 0.5px 0.1px rgba(146, 146, 146, 0.336);
+    border-radius: 1rem;
+}
+
+.form-container{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background-size: cover;
+    margin: 2vh 2vw;
+}
+.input{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    border: solid rgba(0, 0, 0, 0.377);
+    box-shadow: 0.5rem 0.5rem 1.5rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+.file{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+}
+
+.send{
+    box-sizing: border-box;
+    background-color: rgb(75, 131, 236);
+    border: none;
+    border-radius: 60px;
+    width: 30%;
+    padding: 1vh 1vw;
+    height: auto;
+    color: #ffffff;
+    box-shadow: 0.5rem 0.5rem 1.5rem 0.1rem rgba(0, 0, 0, 0.377);
+    border: solid rgba(0, 0, 0, 0.377);
+}
+
+.send:hover{
+    background-color: rgba(102, 104, 243, 0.733);
+}
+
+.send:active{
+    background-color: rgb(0, 17, 255);
+}

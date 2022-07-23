@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/701150858a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/contact.css">
+    <title>Boxha -> Proceso de Producccion</title>
+</head>
+<body>
+    <div class="grid-conteiner">
+        <header class="header-conteiner">
+            <a href="./index.html"><img src="./style/img/boxha_logo.png" alt="icons" class="logo"></a>
+            <nav class="nav-conteiner">
+                <a href="./index.html"><div class="icons"><i class="fa fa-home" aria-hidden="true"></i><p>Inicio</p></div></a>
+                <a href="./aboutUs.html"><div class="icons"><i class="fa fa-info-circle" aria-hidden="true"></i><p>Acerca de nosotros</p></div></a>
+                <a href="./products.html"><div class="icons"><i class="fa fa-product-hunt" aria-hidden="true"></i><p>Nuestro producto</p></div></a>
+                <a href="./process.html"><div class="icons"><i class="fa fa-industry" aria-hidden="true"></i><p>Proceso de produccion</p></div></a>
+                <a href="./contact.html"><div class="icons"><i class="fa fa-envelope" aria-hidden="true"></i><p>Contacto</p></div></a>
+            </nav>
+            <div class="sesion">
+                <a href="./doc/sesion/login.html">Iniciar sesion</a>
+                <a href="./doc/sesion/register.html">Registrarse</a>
+            </div>
+        </header>
+
+        <div class="carrusel">
+            <img src="./style/img/Imagen-1.jpg" alt="">
+            <div class="div-text">
+                <div>
+                    <h3>Contactanos</h3>
+                    <form action="" class="form-container">
+                        <label for="nombre"></label>
+                        <input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <label for="correo"></label>
+                        <input class="input" type="email" name="correo" id="correo" placeholder="Correo">
+                        <label for="telefono"></label>
+                        <input class="input" type="number" name="telefono" id="telefono" placeholder="Telefono">
+                        <textarea class="input" name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Dinos lo que piensas"></textarea>
+                        <label for="boton"></label>
+                        <input class="send" type="button" id="boton" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--No le muevas nada a las lineas de abajo porque EXPLOTA-->
+        <footer class="footer-conteiner">
+            <div class="flex-conteiner">
+                <a class="data" href=""><p>- Terminos y Condiciones -</p></a>
+                <a class="data" href=""><p>- Contactanos -</p></a>
+                <a class="data" href=""><p>- Preguntas frecuentes -</p></a>
+            </div>
+            <div class="flex-conteiner">
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1da1f2;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x " ></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse "></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1da1f2;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x " ></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse "></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1eff00;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x" ></i>
+                        <i class="font-size fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #ff8800;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x" ></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </a>
+                </span>
+            </div>
+            <p>Derechos reservados: © Boxha 2022 </p>
+        </footer>
+    </div>
+    <div class="lds-ring loader" id="loader"><div></div><div></div><div></div><div></div></div>
+    <script src="./script/loadScreen.js"></script>
+</body>
+</html>

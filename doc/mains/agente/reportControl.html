@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/701150858a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/reportControl.css">
+    <title>Creacion de reportes</title>
+</head>
+
+<body>
+    <!--Encabezado-->
+    <header>
+        <div class="div-conteiner">
+            <img class="logo" src="./style/img/boxha_logo.png" alt="">
+            <div>
+                <a class="div-userName" href="./reportControl.html">Bienvenido</a>
+                <a class="div-exit" href="./index.html">Salir</a>
+            </div>
+        </div>
+        <nav class="nav-conteiner">
+            <a href="./sto.php"><div class="icons"><i class="fa fa-cubes" aria-hidden="true"></i><p>Bodega</p></div></a>
+            <a href="./orderMan.php"><div class="icons"><i class="fa fa-archive" aria-hidden="true"></i><p>Manejo de pedidos</p></div></a>
+            <a href="./customerService.html"><div class="icons"><i class="fa fa-user-circle-o" aria-hidden="true"></i><p>Soporte Tecnico</p></div></a>
+            <a href="./reportControl.html"><div class="icons"><i class="fa fa-window-restore" aria-hidden="true"></i><p>Creacion de reportes</p></div></a>
+        </nav>
+    </header>
+    <!--Cuerpo-->
+    <main>
+        <div class="storage-grid-conteiner">
+            <div class="reportes">
+                    <form action="enviarReporte.php" method="post" class="form-container"  enctype="multipart/form-data">
+                        <label for="nombre"></label>
+                        <input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre completo">
+                        <label for="correo"></label>
+                        <input class="input" type="email" name="correo" id="correo" placeholder="Correo">
+                        <label for="telefono"></label>
+                        <textarea class="input" name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Descripcion del reporte"></textarea>
+                        <label for="adjunto"></label>
+                        <input class="file" type="file" name="adjunto" id="adjunto" accept=".pdf,.jpg,.png" multiple>
+                        <label for="boton"></label>
+                        <input class="send" type="submit" id="boton" value="Enviar">
+                    </form>
+            </div>
+        </div>
+    </main>
+    <!--Pie de pagina-->
+    <footer>
+        <div class="div-conteiner-footer">
+            <div>
+                <h3>Derechos reservados ©Boxha</h3>
+            </div>   
+            <div>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1da1f2;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x " ></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse "></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1da1f2;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x " ></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse "></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #1eff00;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x" ></i>
+                        <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+                    </a>
+                </span>
+                <span class="fa-stack fa-1x" style="--fa-inverse: #ff8800;">
+                    <a href="#">
+                        <i class="fa-solid fa-square fa-stack-2x" ></i>
+                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <div class="lds-ring loader" id="loader"><div></div><div></div><div></div><div></div></div>
+    <script src="./script/loadScreen.js"></script>
+</body>
+
+</html>

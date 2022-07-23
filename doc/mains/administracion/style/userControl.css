@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto';
+}
+
+html{
+    font-size: 62.5%;
+    background: #d1913c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #d1913c, #ffd194); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fff9f2, #fce7ca);
+}
+
+:root{
+    --primary-color: #8d4925;
+    --secondary-color: #c57d56;
+    --tertiary-color:#ffb48a;
+    --quaternary-color:#f0ecec;
+    --quintinary-color:#ffffff;
+}
+
+
+/*Loader de pagina*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px; /*Estos dos apartados "weidth" y "height" es el tamaño para la figura, esto aplica en todas las veces que aparecen, es largo y alto respectivamanete*/
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  /* Hasta aqui termina el codigo para solamente la animacion del circulo girando */
+
+.loader{
+    /* Este apartado indica el fondo de la animacion mencionada antes y como se comportara*/
+    background: #000; /* Color del fondo de la animacion*/
+    width: 100%; /* Esta linea y la siguiente indican que el fondo cubra todo el largo y alto de la pagina*/
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Esta linea y la siguiente realizan el centrado del circulo en la pagina*/
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000; /* Se inidica que la pantalla de carga debe de estar por encima de todo lo que tenga la pagina, el numero debe ser muy alto para que esto se cumpla*/
+    
+    /*En esta pagina web se encuentran distintos diseños (figuras) para la animacion de desaparicion de carga: https://bennettfeely.com/clippy/ */
+
+    clip-path: circle(150% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde inicia)*/
+    transition: clip-path 0.8s ease-in-out; /* Es la transicion y el tiempo que le tomara realizar dicha transicion para quitarse*/
+}
+
+.loader2{ /* Se crea este segundo elemento para la desaparicion de la animacion de carga */
+    clip-path: circle(0% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde termina)*/
+    /* Para este apartado, se necesita de la ayuda de JavaScript para que se cuumpla esto correctamente*/
+}
+
+
+
+
+
+
+
+/*Cuerpo general*/
+header{
+    background:linear-gradient(360deg,#8d4925,#c57d56);
+}
+.nav-conteiner{
+    width: 100%;
+    display: flex;
+}
+.side-bar{
+    width: 20vw;
+    height: 93.5vh;
+    background-image:linear-gradient(#8d4925,#c57d56);
+    position: -webkit-sticky;
+    position: sticky;
+    
+}
+.div-conteiner::after{
+    display: block;
+    background-color: #ffffffb2;
+    height: 0.2vh;
+    margin: 1vh 1vw;
+    width: 100%;
+    content: "";
+
+}
+
+.div-list{
+    margin: 5vh 1vw;
+}
+
+.icons{
+    border: solid #000;
+    border-radius: 1vmax;
+    margin-bottom: 4vh;
+    background-color: #e9c1ab59;
+}
+
+.div-list .icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--quintinary-color);
+}
+
+.icons:hover{
+    background-color: rgba(255, 128, 24, 0.36);
+    border-radius: 10px;
+    box-shadow: 0.5vh 0.5vh 0.1vw 0.1vh #f0ecec59;
+}
+/*
+.div-list .icons:hover{
+    background-color: #818181;
+    cursor: pointer;
+    padding: 12px 10px;
+}
+*/
+.div-list .icons .fa-solid{
+    width: 5vw;
+    font-size: 25px;
+    text-align: center;
+}
+
+.div-list .icons p{
+    display: inline-block;
+    margin-left: 1vh;
+}
+
+.div-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 0%;
+}
+
+.div-conteiner a:hover{
+    color: rgba(240, 255, 254, 0.836);
+    text-decoration: underline;
+}
+
+.div-companyName{
+    background-image: url(./img/boxha_logo.png);
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 10vh;
+    width: 20vw;
+}
+
+
+.div-userName{
+    color: var(--quintinary-color);
+    font-size: 1.2vmax;
+    font-weight: 400;
+    text-decoration:none;
+    padding: 0% 2vw;
+}
+.div-exit{
+    display:block;
+    color: var(--quintinary-color);
+    font-size: 0.7vmax;
+    font-weight: 400;
+    text-decoration:none;
+    padding: 0% 2vw;
+}
+.nav-conteiner a{
+    color: var(--quintinary-color);
+    font-size: 1.3vw;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 0.5rem;
+    margin-right: 3vw;
+}
+.nav-conteiner a::before{
+    display: block;
+    background: var(--quintinary-color);
+    height: 5px;
+    width: 0%;
+    top: 0;
+    content: "";
+    margin-bottom: 0.5rem;
+    transition: width 1s;
+    position: relative;
+}
+/*
+.nav-conteiner a:hover{
+    background-color: rgba(255, 128, 24, 0.36);
+    border-radius: 10px;
+    width: 50%;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #f0ecec59;
+}
+*/
+.nav-conteiner a:hover::before{
+    width: 100%;   
+}
+
+footer{
+    background:linear-gradient(360deg,#8d4925,#c57d56);
+}
+.div-conteiner-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap column;
+    padding: 1rem;
+}
+.div-conteiner-footer::before{
+    display: block;
+    background-color: #ffffffb2;
+    content:"";
+    width: 100%;
+    height: 0.3vh;
+    border-radius: 1vmax;
+}
+
+.fa-square{
+    color: var(--quintinary-color);
+}
+
+.div-conteiner-footer h3{
+    font-size: 1vmax;
+    color: var(--quaternary-color);
+    font-style: italic;
+    font-weight: 400;
+}
+.div-conteiner-footer a{
+    padding: 0.5rem;
+}
+.div-conteiner-footer span{
+    padding: 0.2vh 1vw;
+}
+.div-conteiner-footer span:hover{
+    padding: 0.25rem;
+    background-color: rgba(255, 128, 24, 0.36);
+    border-radius: 10px;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #f0ecec59;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./register.css">
+  <title>Registro</title>
+  <script>
+ function disableSubmit() {
+  document.getElementById("submit").disabled = true;
+ }
+
+  function activateButton(element) {
+
+      if(element.checked) {
+        document.getElementById("submit").disabled = false;
+       }
+       else  {
+        document.getElementById("submit").disabled = true;
+      }
+
+  }
+</script>
+</head>
+<body onload="disableSubmit()">
+  <form action="conexion_register.php" method="POST">
+    <section class="form-register">
+      <h4>Formulario Registro</h4>
+    <!--Campos para ingresar los datos -->
+      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+      <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese su Nombre de Usuario">
+      <input class="controls" type="password" name="contra" id="contra" placeholder="Ingrese su Contraseña">
+      <input class="controls" type="date" name="fecha" id="fecha" placeholder="Ingrese fecha de nacimiento">
+      <input class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
+      <input class="controls" type="number" name="postal" id="postal" placeholder="Ingrese su numero postal">
+      <input class="controls" type="number" name="telefono" id="telefono" placeholder="Ingrese su numero telefonico">
+      <input class="controls" type="number" name="telefono2" id="telefono2" placeholder="Puede ingresar un segundo numero telefonico">
+      <!--Apartado para terminos y condiciones en caso de especificar algunos -->
+	  <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  Estoy de acuerdo con <a href="#">Terminos y Condiciones
+	  <input class="botons" type="submit" name="submit" id="submit" value="Registrar"><a href="javascript: history.go(-1)"><button class="botons" type="button"> <img src="home.png" height ="15" width="15" /></button></a>
+     
+    <!--Botón para acceder a pagina para hacer login -->
+		 <p><a href="login.html">Ya tengo Cuenta</a></p>
+    </section>
+  </form>
+</body>
+</html>

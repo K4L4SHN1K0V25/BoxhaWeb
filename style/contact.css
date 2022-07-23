@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+*{
+    font-family: 'Roboto';
+}
+
+html{
+    font-size: 62.5%;
+    background-color: rgba(230, 143, 62, 0);
+}
+
+
+/*Loader de pagina*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px; /*Estos dos apartados "weidth" y "height" es el tamaño para la figura, esto aplica en todas las veces que aparecen, es largo y alto respectivamanete*/
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  /* Hasta aqui termina el codigo para solamente la animacion del circulo girando */
+
+.loader{
+    /* Este apartado indica el fondo de la animacion mencionada antes y como se comportara*/
+    background: #000; /* Color del fondo de la animacion*/
+    width: 100%; /* Esta linea y la siguiente indican que el fondo cubra todo el largo y alto de la pagina*/
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Esta linea y la siguiente realizan el centrado del circulo en la pagina*/
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000; /* Se inidica que la pantalla de carga debe de estar por encima de todo lo que tenga la pagina, el numero debe ser muy alto para que esto se cumpla*/
+    
+    /*En esta pagina web se encuentran distintos diseños (figuras) para la animacion de desaparicion de carga: https://bennettfeely.com/clippy/ */
+
+    clip-path: circle(150% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde inicia)*/
+    transition: clip-path 0.8s ease-in-out; /* Es la transicion y el tiempo que le tomara realizar dicha transicion para quitarse*/
+}
+
+.loader2{ /* Se crea este segundo elemento para la desaparicion de la animacion de carga */
+    clip-path: circle(0% at 100% 0); /* Indica que tanto cubre el fondo de la animacion en la pagina (donde termina)*/
+    /* Para este apartado, se necesita de la ayuda de JavaScript para que se cuumpla esto correctamente*/
+}
+
+
+
+
+
+
+
+/*Cuerpo*/
+.grid-conteiner{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+    "header header header"
+    "carrusel carrusel carrusel"
+    "footer footer footer"
+    ;
+}
+
+.logo{
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+}
+
+.header-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: header;
+    background-image: linear-gradient(rgb(145, 115, 72), rgb(165, 114, 18));
+}
+.sesion{
+    display: flex;
+    flex-flow: wrap wrap;
+}
+.sesion a{
+    border: solid rgba(0, 0, 0, 0.137);
+    border-radius: 40px;
+}
+.nav-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+header p{
+    margin: 0.5vw;
+    font-size: 1.4rem;
+}
+
+header a{
+    text-decoration: none;
+    color: #ffffff;
+    margin: 1vh 0.5vw;
+    padding: 10px;
+}
+header i{
+    font-size: 1.4rem;
+}
+
+.nav-conteiner a::before{
+    display: block;
+    background: #ffffff;
+    height: 3px;
+    width: 0%;
+    top: 0;
+    content: "";
+    margin-bottom: 0.5rem;
+    transition: width 1s;
+    position: relative;
+}
+
+header a:hover{
+    background-color: rgba(250, 175, 104, 0.459);
+    border-radius: 10px;  
+}
+
+.nav-conteiner a:hover::before{
+    width: 100%;
+}
+
+
+.textcard1{
+    display: flex;
+    background-image: linear-gradient(rgb(247, 200, 147),rgb(253, 239, 222));
+    flex-flow: wrap column;
+    justify-items: center;
+    justify-content: center;
+    grid-area: textcard1;
+    padding: 1vh 2vw;
+    margin: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+.textcard2{
+    display: flex;
+    background-image: linear-gradient(rgb(247, 200, 147),rgb(223, 213, 200));
+    flex-flow: wrap column;
+    justify-items: center;
+    justify-content: center;
+    grid-area: textcard2;
+    padding: 1vh 2vw;
+    margin: 1rem;
+    box-shadow: -0.5rem -0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+.img{
+    width: 100%;
+    height: auto;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+.img1{
+    grid-area: img1;
+    padding: 1rem;
+}
+.img2{
+    grid-area: img2;
+    padding: 1rem;
+}
+
+.textcard1 p{
+    color: black;
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.textcard1 h2{
+    font-size: 2.3rem;
+    font-style: italic;
+}
+.textcard2 p{
+    color: black;
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.textcard2 h2{
+    font-size: 2.3rem;
+    font-style: italic;
+}
+.footer-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: footer;
+    background-image: linear-gradient(rgb(145, 115, 72), rgb(165, 114, 18));
+}
+.fa-square{
+    color: rgb(255, 255, 255);
+}
+
+.footer-conteiner{
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-conteiner{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1vh 3vw;
+    text-decoration: none;
+    color:#ffffff;
+}
+
+footer p{
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.data:hover{
+    text-decoration: underline;
+}
+
+.auxiliar{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    grid-area: Auxiliar;
+    padding: 1vh 2vw;
+    background-image: linear-gradient(rgb(247, 200, 147),rgb(223, 213, 200));
+    box-shadow: 0.5rem 0.5rem 1rem 0.1rem rgba(0, 0, 0, 0.377);
+    margin: 1vmax;
+    padding: 1vh 1vw;
+}
+
+.carrusel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: carrusel;
+    width: 100%;
+    position: relative;
+}
+.div-text{
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)) no-repeat center fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.carrusel img{
+    width: 100%;
+    height: 100%;
+}
+.carrusel h3{
+    font-size: 4vmax;
+    color: #ffffff;
+    margin: 1vh 1vw;
+    text-align: center;
+    width: 100%;
+}
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    background-size: cover;
+}
+.input{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1vh 1vw;
+    padding: 1vh 1vw;
+    border-radius: 10px;
+    border: none;
+}
+
+.send{
+    box-sizing: border-box;
+    background-color: rgb(75, 191, 236);
+    border: none;
+    border-radius: 60px;
+    width: 30%;
+    padding: 1vh 1vw;
+    height: auto;
+    color: #ffffff;
+}
+.send:hover{
+    background-color: #66eef3bb;
+}
+.send:active{
+    background-color: rgb(0, 255, 242);
+}
+
+
